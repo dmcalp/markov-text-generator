@@ -8,14 +8,14 @@ def create_tf_matrix(text):
   
   words = text.split(" ")
 
-  termMatrix = defaultdict(list)
-  succeedingWords = zip(words[0:-1], words[1:])
+  tf_matrix = defaultdict(list)
+  succeeding_words = zip(words[0:-1], words[1:])
 
-  for w1, w2 in succeedingWords:
-    termMatrix[w1].append(w2)
+  for w1, w2 in succeeding_words:
+    tf_matrix[w1].append(w2)
 
-  termMatrix = dict(termMatrix)
-  return termMatrix
+  tf_matrix = dict(tf_matrix)
+  return tf_matrix
 
 
 def generate_sentence(matrix, word_limit=10):
